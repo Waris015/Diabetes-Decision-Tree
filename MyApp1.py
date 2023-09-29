@@ -8,4 +8,4 @@ df=pd.read_csv("./data/stock_index_price.csv")
 st.write(df.head(10))
 
 st.header("Index Price Prediction Chart")
-st.line_char(df)
+st.line_char(df, x="interest_rate",y=["unemployment_rate","stock_index_price"])
