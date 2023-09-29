@@ -1,5 +1,5 @@
 import pandas as pd
-import stremlit as st
+import streamlit as st
 
 st.title("Index Price Prediction")
 st.header("Index Price Prediction from NPRU")
