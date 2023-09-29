@@ -33,5 +33,5 @@ if st.button("พยากรณ์ข้อมูล"):
     y_predict=modelRegress.predict(pf.fit_transform(x_input))
     st.write(y_predict)
     st.button("ไม่พยากรณ์ข้อมูล")
-
-st.write(y_predict)
+else:
+    st.write(y_predict)
