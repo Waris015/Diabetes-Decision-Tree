@@ -34,4 +34,4 @@ if st.button("พยากรณ์ข้อมูล"):
     st.write(y_predict)
     st.button("ไม่พยากรณ์ข้อมูล")
 else:
-    st.write(y_predict)
+    st.button("ไม่พยากรณ์ข้อมูล")
