@@ -11,7 +11,7 @@ df = pd.read_csv('./data/Diabetes Classification.csv')
 st.write(df.head(10))
 
 x = df.iloc[:, 0:6]
-y = df['diagnosis']
+y = df['Diagnosis']
 
 # เพิ่ม train_test_split และตั้งค่า random_state ที่คุณต้องการ
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=1)
