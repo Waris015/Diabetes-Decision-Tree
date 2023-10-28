@@ -1,6 +1,6 @@
 import streamlit as st
 
 
-st.title("Projects")
+st.title("การพยากรณ์การเป็นโรคเบาหวาน")
 
 st.write("You have entered", st.session_state["my_input"])
