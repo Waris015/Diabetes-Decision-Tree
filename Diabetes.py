@@ -15,10 +15,11 @@ st.write(df.head(10))
 
 x1=st.number_input("กรุณาป้อนข้อมูล อายุ:")
 x2=st.text_input("กรุณาป้อนข้อมูล unemployment_rate:")
+x3=st.text_input("กรุณาป้อนข้อมูล unemployment_rate:")
 
 
 if st.button("พยากรณ์ข้อมูล"):
-    x_input=[[x1,x2,]]
+    x_input=[[x1,x2,x3]]
     y_predict=modelRegress.predict(pf.fit_transform(x_input))
     st.write(y_predict)
     st.button("ไม่พยากรณ์ข้อมูล")
