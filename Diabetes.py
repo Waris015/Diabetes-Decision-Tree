@@ -1,17 +1,14 @@
 import pandas as pd
 import streamlit as st
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import PolynomialFeatures
-import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score, mean_squared_error
 
 st.title("Index Price Prediction")
 st.header("Index Price Prediction from NPRU")
 
 # อ่านข้อมูลจากไฟล์ CSV
 df = pd.read_csv("./data/Diabetes_Classification.csv")
-st.write (df.head(10))
+st.write(df.head(10))
 
 x1 = st.number_input("กรุณาป้อนข้อมูล Age:")
 x2 = st.number_input("กรุณาป้อนข้อมูล Gender (เพศชาย 1, เพศหญิง 2):")
