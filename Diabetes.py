@@ -14,7 +14,7 @@ df=pd.read_csv("./data/Diabetes_Classification.csv")
 st.write(df.head(10))
 
 x1=st.number_input("กรุณาป้อนข้อมูล อายุ:")
-x2=st.text_input("กรุณาป้อนข้อมูล เพศ:")
+x2=st.text_input("กรุณาป้อนข้อมูล เพศ (เพศชาย Male, เพศหญิง Female):")
 x3=st.number_input("กรุณาป้อนข้อมูล BMI:")
 
 
