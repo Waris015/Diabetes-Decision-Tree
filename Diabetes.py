@@ -23,7 +23,7 @@ if st.button("พยากรณ์ข้อมูล"):
 
     # ทำการตรวจสอบข้อมูลและเตรียมข้อมูลสำหรับการพยากรณ์
     X = df[['Age', 'Gender', 'BMI', 'Pressure', 'FBS', 'HbA1c']]
-    y = df['target']
+    y = df['DiabetesClassification']
 
     # แบ่งข้อมูลเป็นชุดข้อมูลการฝึกอบรมและการทดสอบ
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
