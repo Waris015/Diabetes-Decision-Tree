@@ -6,7 +6,7 @@ st.title("Diabetes Diagnosis Prediction")
 st.header("Predicting Diabetes Diagnosis from Health Data")
 
 # อ่านข้อมูลจากไฟล์ CSV
-df = pd.read_csv("DiabetesClassification.csv")
+df = pd.read_csv("Diabetes_Classification.csv")
 st.write(df.head(10))
 
 x1 = st.number_input("กรุณาป้อนข้อมูลอายุ:")
