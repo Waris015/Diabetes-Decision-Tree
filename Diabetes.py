@@ -16,16 +16,16 @@ st.write (df.head(10))
 x1 = st.number_input("กรุณาป้อนข้อมูล Age:")
 x2 = st.number_input("กรุณาป้อนข้อมูล Gender (เพศชาย 1, เพศหญิง 2):")
 x3 = st.number_input("กรุณาป้อนข้อมูล BMI:")
-x4 = st.number_input("กรุณาป้อนข้อมูล ความดันโลหิต:")
-x5 = st.number_input("กรุณาป้อนข้อมูล ค่าน้ำตาลในเลือด:")
-x6 = st.number_input("กรุณาป้อนข้อมูล ค่าน้ำตาลสะสม:")
+x4 = st.number_input("กรุณาป้อนข้อมูล Pressure:")
+x5 = st.number_input("กรุณาป้อนข้อมูล FBS:")
+x6 = st.number_input("กรุณาป้อนข้อมูล HbA1c:")
 
 if st.button("พยากรณ์ข้อมูล"):
     # สร้างโมเดล Linear Regression
     modelRegress = LinearRegression()
 
     # ทำการตรวจสอบข้อมูลและเตรียมข้อมูลสำหรับการพยากรณ์
-    X = df[['อายุ', 'เพศ', 'BMI', 'ความดันโลหิต', 'ค่าน้ำตาลในเลือด', 'ค่าน้ำตาลสะสม']]
+    X = df[['Age', 'Gender', 'BMI', 'Pressure', 'FBS', 'HbA1c']]
     y = df['target']
 
     # แบ่งข้อมูลเป็นชุดข้อมูลการฝึกอบรมและการทดสอบ
