@@ -31,12 +31,6 @@ DTmodel.fit(x_train, y_train)
 
 x1=st.number_input("กรุณาป้อนข้อมูล อายุ:")
 x2=st.number_input("กรุณาป้อนข้อมูล เพศ (0 สำหรับผู้หญิง, 1 สำหรับผู้ชาย):")
-x3=st.number_input("กรุณาป้อนข้อมูล อัตราการเต้นของหัวใจ:")
-x4=st.number_input("กรุณาป้อนข้อมูล ความดันสูง:")
-x5=st.number_input("กรุณาป้อนข้อมูล ความดันต่ำ:")
-x6=st.number_input("กรุณาป้อนข้อมูล น้ำตาลในเลือด:")
-x7=st.number_input("กรุณาป้อนข้อมูล โรคกล้ามเนื้อ (CK-MB):")
-x8=st.number_input("กรุณาป้อนข้อมูล โทรโปนิน .:")
 
 if st.button("พยากรณ์ข้อมูล"):
     x_input=[[x1,x2,x3,x4,x5,x6,x7,x8]]
