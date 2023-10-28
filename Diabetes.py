@@ -14,12 +14,14 @@ df=pd.read_csv("./data/Diabetes_Classification.csv")
 st.write(df.head(10))
 
 x1=st.number_input("กรุณาป้อนข้อมูล อายุ:")
-x2=st.text_input("กรุณาป้อนข้อมูล เพศ (เพศชาย Male, เพศหญิง Female):")
+x2=st.number_input("กรุณาป้อนข้อมูล เพศ (เพศชาย 1, เพศหญิง 2):")
 x3=st.number_input("กรุณาป้อนข้อมูล BMI:")
-x4=st.text_input("กรุณาป้อนข้อมูล ความดันโลหิต (High, Normal, Low ):")
+x4=st.number_input("กรุณาป้อนข้อมูล ความดันโลหิต:")
+x5=st.number_input("กรุณาป้อนข้อมูล ค่าน้ำตาลในเลือด:")
+x6=st.number_input("กรุณาป้อนข้อมูล ค่าน้ำตาลสะสม:")
 
 if st.button("พยากรณ์ข้อมูล"):
-    x_input=[[x1,x2,x3,x4]]
+    x_input=[[x1,x2,x3,x4,x5,x6]]
     y_predict=modelRegress.predict(pf.fit_transform(x_input))
     st.write(y_predict)
     st.button("ไม่พยากรณ์ข้อมูล")
