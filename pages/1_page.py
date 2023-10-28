@@ -15,7 +15,7 @@ st.write(df.head(10))
 
 x1=st.number_input("กรุณาป้อนข้อมูล อายุ:")
 x2=st.text_input("กรุณาป้อนข้อมูล unemployment_rate:")
-x3=st.number_input("กรุณาป้อนข้อมูล BMI:")
+
 
 if st.button("พยากรณ์ข้อมูล"):
     x_input=[[x1,x2,]]
