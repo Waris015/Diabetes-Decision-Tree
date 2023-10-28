@@ -18,7 +18,7 @@ x2=st.text_input("กรุณาป้อนข้อมูล unemployment_rat
 x3=st.number_input("กรุณาป้อนข้อมูล BMI:")
 
 if st.button("พยากรณ์ข้อมูล"):
-    x_input=[[x1,x2]]
+    x_input=[[x1,x2,x3]]
     y_predict=modelRegress.predict(pf.fit_transform(x_input))
     st.write(y_predict)
     st.button("ไม่พยากรณ์ข้อมูล")
