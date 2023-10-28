@@ -10,14 +10,14 @@ from sklearn.metrics import r2_score,mean_squared_error
 st.title("Index Price Prediction")
 st.header("Index Price Prediction from NPRU")
 
-df=pd.read_csv("./data/Diabetes_Classification.csv")
+df=pd.read_csv("./data/stock_index_price.csv")
 st.write(df.head(10))
 
 st.header("Index Price Prediction Chart")
-st.line_chart(df, x="interest_rate",y=["unemployment_rate","Diabetes_Classification"])
+st.line_chart(df, x="interest_rate",y=["unemployment_rate","stock_index_price"])
 
 x=df[['interest_rate','unemployment_rate']]
-y=df['Diabetes_Classification']
+y=df['stock_index_price']
 pf=PolynomialFeatures(degree=3)
 x_poly=pf.fit_transform(x)
 
