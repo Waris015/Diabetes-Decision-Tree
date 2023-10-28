@@ -4,8 +4,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 
-st.title("Hart NPRU")
-st.header("Hart NPRU")
+st.title("Diabetes Decision")
+st.header("Diabetes Classification Dataset")
 
 # อ่านข้อมูลจากไฟล์ CSV
 df = pd.read_csv('./data/Diabetes Classification.csv')
