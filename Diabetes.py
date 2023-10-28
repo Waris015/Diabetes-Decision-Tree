@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split  # เพิ่มบรรทัดนี้
 
 st.title("Hart NPRU")
 st.header("Hart NPRU")
@@ -9,9 +10,10 @@ st.header("Hart NPRU")
 df = pd.read_csv('./data/Diabetes Classification.csv')
 st.write(df.head(10))
 
-x = df.iloc[:, 0:6]  # ถอดคอลัมน์ 'Diagnosis' ออก เนื่องจากเราไม่ต้องการใช้มันในการพยากรณ์
-y = df['Diagnosis']
+x = df.iloc[:, 0:6]
+y = df['diagnosis']
 
+# เพิ่ม train_test_split และตั้งค่า random_state ที่คุณต้องการ
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=1)
 
 sc = StandardScaler()
