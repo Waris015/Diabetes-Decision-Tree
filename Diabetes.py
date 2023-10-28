@@ -2,18 +2,20 @@ import pandas as pd
 import streamlit as st
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import train_test_split  # เพิ่มบรรทัดนี้
+from sklearn.model_selection import train_test_split
 
 st.title("Hart NPRU")
 st.header("Hart NPRU")
 
+# อ่านข้อมูลจากไฟล์ CSV
 df = pd.read_csv('./data/Diabetes Classification.csv')
 st.write(df.head(10))
 
-x = df.iloc[:, 0:6]
-y = df['Diagnosis']
+# แบ่งข้อมูลเป็น features (x) และ target (y)
+x = df.iloc[:, :-1]  # ใช้ทุกคอลัมน์ยกเว้นคอลัมน์สุดท้าย
+y = df.iloc[:, -1]   # ใช้คอลัมน์สุดท้ายเป็น target
 
-# เพิ่ม train_test_split และตั้งค่า random_state ที่คุณต้องการ
+# แบ่งข้อมูลเป็นชุดการฝึกอบรมและชุดทดสอบ
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=1)
 
 sc = StandardScaler()
