@@ -13,11 +13,6 @@ st.header("Index Price Prediction from NPRU")
 df=pd.read_csv("./data/Diabetes_Classification.csv")
 st.write(df.head(10))
 
-
-
-
-modelRegress=LinearRegression()
-modelRegress.fit(x_train,y_train)
 x1=st.number_input("กรุณาป้อนข้อมูล interest_rate:")
 x2=st.number_input("กรุณาป้อนข้อมูล unemployment_rate:")
 
