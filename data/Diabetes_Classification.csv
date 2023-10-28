@@ -1,4 +1,4 @@
-Age,Gender,BMI,Blood Pressure,FBS,HbA1c,Diagnosis
+Age,Gender,BMI,Pressure,FBS,HbA1c,Diagnosis
 45,1,25,160,100,5.7,No
 55,2,30,98,120,6.4,Yes
 65,1,35,160,140,7.1,Yes
