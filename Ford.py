@@ -14,12 +14,7 @@ df=pd.read_csv("./data/Diabetes_Classification.csv")
 st.write(df.head(10))
 
 
-x=df[['interest_rate','unemployment_rate']]
-y=df['stock_index_price']
-pf=PolynomialFeatures(degree=3)
-x_poly=pf.fit_transform(x)
 
-x_train,x_test,y_train,y_test =train_test_split(x_poly,y,random_state=0)
 
 modelRegress=LinearRegression()
 modelRegress.fit(x_train,y_train)
