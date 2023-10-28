@@ -1,39 +1,39 @@
 import pandas as pd
 import streamlit as st
 from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
 
-st.title("Index Price Prediction")
-st.header("Index Price Prediction from NPRU")
+st.title("Diabetes Diagnosis Prediction")
+st.header("Predicting Diabetes Diagnosis from Health Data")
 
 # อ่านข้อมูลจากไฟล์ CSV
-df = pd.read_csv("./data/DiabetesClassification.csv")
+df = pd.read_csv("DiabetesClassification.csv")
 st.write(df.head(10))
 
-x1 = st.number_input("กรุณาป้อนข้อมูล Age:")
-x2 = st.number_input("กรุณาป้อนข้อมูล Gender (เพศชาย 1, เพศหญิง 2):")
+x1 = st.number_input("กรุณาป้อนข้อมูลอายุ:")
+x2 = st.number_input("กรุณาป้อนข้อมูลเพศ (เพศชาย 1, เพศหญิง 2):")
 x3 = st.number_input("กรุณาป้อนข้อมูล BMI:")
-x4 = st.number_input("กรุณาป้อนข้อมูล Pressure:")
-x5 = st.number_input("กรุณาป้อนข้อมูล FBS:")
-x6 = st.number_input("กรุณาป้อนข้อมูล HbA1c:")
+x4 = st.number_input("กรุณาป้อนข้อมูลความดันโลหิต:")
+x5 = st.number_input("กรุณาป้อนข้อมูลค่าน้ำตาลในเลือด:")
+x6 = st.number_input("กรุณาป้อนข้อมูลค่า HbA1c:")
 
 if st.button("พยากรณ์ข้อมูล"):
-    # สร้างโมเดล Linear Regression
-    modelRegress = LinearRegression()
-
-    # ทำการตรวจสอบข้อมูลและเตรียมข้อมูลสำหรับการพยากรณ์
+    # เตรียมข้อมูล
     X = df[['Age', 'Gender', 'BMI', 'Pressure', 'FBS', 'HbA1c']]
-    y = df['DiabetesClassification']
+    y = df['Diagnosis']  # คอลัมน์ที่เราจะพยากรณ์
 
-    # แบ่งข้อมูลเป็นชุดข้อมูลการฝึกอบรมและการทดสอบ
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    # สร้างโมเดล Linear Regression
+    model = LinearRegression()
 
     # ฝึกโมเดล
-    modelRegress.fit(X_train, y_train)
+    model.fit(X, y)
 
-    # พยากรณ์ค่า
+    # ทำการพยากรณ์ผล
     x_input = [[x1, x2, x3, x4, x5, x6]]
-    y_predict = modelRegress.predict(x_input)
-    st.write("ผลลัพธ์การพยากรณ์:", y_predict[0])
-else:
-    st.button("ไม่พยากรณ์ข้อมูล")
+    diagnosis = model.predict(x_input)[0]
+
+    if diagnosis == "Yes":
+        st.write("ผลลัพธ์การพยากรณ์: ผู้ป่วยเบาหวาน")
+    else:
+        st.write("ผลลัพธ์การพยากรณ์: ไม่เป็นผู้ป่วยเบาหวาน")
+
+# เพิ่มเงื่อนไขอื่น ๆ ที่คุณต้องการแสดงผลหรือกระทำต่อไป
