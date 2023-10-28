@@ -14,7 +14,8 @@ df=pd.read_csv("./data/Diabetes_Classification.csv")
 st.write(df.head(10))
 
 x1=st.number_input("กรุณาป้อนข้อมูล อายุ:")
-x2=st.number_input("กรุณาป้อนข้อมูล unemployment_rate:")
+x2=st.text_input("กรุณาป้อนข้อมูล unemployment_rate:")
+x3=st.choice_input("di6")
 
 if st.button("พยากรณ์ข้อมูล"):
     x_input=[[x1,x2]]
