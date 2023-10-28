@@ -7,7 +7,7 @@ st.title("Index Price Prediction")
 st.header("Index Price Prediction from NPRU")
 
 # อ่านข้อมูลจากไฟล์ CSV
-df = pd.read_csv("./data/DiabetesClassification.csv")
+df = pd.read_csv("./data/Diabetes Classification.csv")
 st.write(df.head(10))
 
 x1 = st.number_input("กรุณาป้อนข้อมูล Age:")
