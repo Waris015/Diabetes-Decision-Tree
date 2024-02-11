@@ -4,20 +4,17 @@ import streamlit as st
 st.title("แบบทดสอบ")
 
 # ข้อความอธิบาย
-st.markdown("โปรดเลือกคำตอบที่ถูกต้องที่สุดสำหรับแต่ละข้อ")
+st.markdown("ชื่อ-นามสกุล ผู้ทำข้อสอบ")
 
 # ข้อ 1
-q1_options = ["กรุงเทพมหานคร", "เชียงใหม่", "ภูเก็ต", "อุดรธานี"]
-q1_answer = st.radio("เมืองหลวงของประเทศไทยคืออะไร?", q1_options, index=0)
+q1_options = ["will", "can", "is", "are"]
+q1_answer = st.radio("[she ___ run", q1_options, index=0)
 
-# ข้อ 2
-q2_options = ["แม่น้ำเจ้าพระยา", "แม่น้ำโขง", "แม่น้ำแม่กลอง", "แม่น้ำปิง"]
-q2_answer = st.radio("แม่น้ำสายที่ยาวที่สุดในประเทศไทยคืออะไร?", q2_options, index=1)
 
 # ปุ่มส่งคำตอบ
 if st.button("ส่งคำตอบ"):
     # ตรวจสอบคำตอบ
-    if q1_answer == "กรุงเทพมหานคร" and q2_answer == "แม่น้ำเจ้าพระยา":
-        st.success("ตอบถูกทั้งสองข้อ!")
+    if q1_answer == "is":
+        st.success("ตอบถูก")
     else:
         st.error("ตอบผิด")
