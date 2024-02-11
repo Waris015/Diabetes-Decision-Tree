@@ -5,7 +5,7 @@ st.title("แบบทดสอบ")
 
 # ข้อความอธิบาย
 st.markdown("ชื่อ-นามสกุล ผู้ทำข้อสอบ")
-st.text_input
+st.text_input("ชื่อ-นามสกุล")
 
 # ข้อ 1
 q1_options = ["will", "can", "is", "are"]
