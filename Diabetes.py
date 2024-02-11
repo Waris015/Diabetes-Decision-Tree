@@ -2,20 +2,30 @@ import streamlit as st
 
 # ข้อความหัวข้อ
 with st.container():
-    st.write("แบบทดสอบ")
+    st.title("แบบทดสอบ")
+    st.markdown("""
+        ---
+        """)
 
 # ข้อความอธิบาย
-st.text_input("ชื่อ-นามสกุล ผู้ทำข้อสอบ")
+name = st.text_input("ชื่อ-นามสกุล ผู้ทำข้อสอบ")
 
 # ข้อ 1
 q1_options = ["will", "can", "is", "are"]
-q1_answer = st.radio("she ___ run", q1_options, index=0)
-
+q1_answer = st.radio("เธอ ___ วิ่ง", q1_options, index=0)
 
 # ปุ่มส่งคำตอบ
 if st.button("ส่งคำตอบ"):
     # ตรวจสอบคำตอบ
-    if q1_answer == "is":
+    if q1_answer == "can":
         st.success("ตอบถูก")
     else:
         st.error("ตอบผิด")
+
+# แสดงชื่อผู้ทำข้อสอบ
+st.markdown(f"""
+---
+
+**ชื่อผู้ทำข้อสอบ:** {name}
+
+""")
