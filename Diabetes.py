@@ -1,7 +1,8 @@
 import streamlit as st
 
 # ข้อความหัวข้อ
-st.title("แบบทดสอบ")
+with st.container():
+    st.write("แบบทดสอบ")
 
 # ข้อความอธิบาย
 st.text_input("ชื่อ-นามสกุล ผู้ทำข้อสอบ")
