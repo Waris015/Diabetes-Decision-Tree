@@ -5,11 +5,11 @@ st.title("แบบทดสอบ")
 
 # ข้อความอธิบาย
 st.markdown("ชื่อ-นามสกุล ผู้ทำข้อสอบ")
-st.text_input("ชื่อของคุณ")
+st.text_input
 
 # ข้อ 1
 q1_options = ["will", "can", "is", "are"]
-q1_answer = st.radio("[she ___ run", q1_options, index=0)
+q1_answer = st.radio("she ___ run", q1_options, index=0)
 
 
 # ปุ่มส่งคำตอบ
