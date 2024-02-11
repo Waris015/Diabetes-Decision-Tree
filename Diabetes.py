@@ -2,14 +2,10 @@ import streamlit as st
 
 # ข้อความหัวข้อ
 with st.container():
-  st.title("แบบทดสอบ")
-  st.markdown("""
-    <div class="st-container">
-      ---
-      This is some text with a border.
-      ---
-    </div>
-    """)
+    st.title("แบบทดสอบ")
+    st.markdown("""
+        ---
+        """)
 
 # ข้อความอธิบาย
 name = st.text_input("ชื่อ-นามสกุล ผู้ทำข้อสอบ")
